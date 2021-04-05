@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.SuperMarket.API.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\2021-01\Aplicaciones Web\SupermarketAPI\SuperMarket.API\.idea\.idea.SuperMarket.API\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
