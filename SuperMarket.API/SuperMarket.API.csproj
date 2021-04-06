@@ -14,7 +14,6 @@
       <Folder Include="Domain\Services" />
       <Folder Include="Mapping" />
       <Folder Include="Persistence" />
-      <Folder Include="Resources" />
       <Folder Include="Services" />
     </ItemGroup>
 
