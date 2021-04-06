@@ -10,8 +10,6 @@
 
     <ItemGroup>
       <Folder Include="Domain\Persistence" />
-      <Folder Include="Domain\Repositories" />
-      <Folder Include="Domain\Services" />
       <Folder Include="Mapping" />
       <Folder Include="Persistence" />
       <Folder Include="Services" />
