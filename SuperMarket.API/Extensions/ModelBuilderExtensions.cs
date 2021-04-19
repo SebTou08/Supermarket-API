@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using SuperMarket.API.Domain.Models;
 
 namespace SuperMarket.API.Extensions
 {
@@ -10,13 +12,18 @@ namespace SuperMarket.API.Extensions
             {
                 entity.SetTableName(entity.GetTableName().ToSnakeCae());
                 foreach (var property in entity.GetProperties())
-                    property.SetColumnName(property.GetColumnName().ToSnakeCae());
+                {
+                    StoreObjectIdentifier tableIdentifier;
+                    tableIdentifier = StoreObjectIdentifier.Table(entity.GetTableName(), null);
+                    property.SetColumnName(property.GetColumnName(tableIdentifier).ToSnakeCae());
+                }
+
                 foreach (var key in entity.GetKeys())
                     key.SetName(key.GetName().ToSnakeCae());
                 foreach (var foreing in entity.GetForeignKeys())
                     foreing.SetConstraintName(foreing.GetConstraintName().ToSnakeCae());
                 foreach (var index in entity.GetIndexes())
-                    index.SetName(index.GetName().ToSnakeCase());
+                    index.SetDatabaseName(index.GetDatabaseName().ToSnakeCae());
 
 
 

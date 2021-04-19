@@ -23,7 +23,7 @@ namespace SuperMarket.API.Controllers
         {
             var categories = await _categoryService.ListAsync();
             //TODO: Implement mapping to CategoryResource
-            return;
+            return null;
         }
     }
 }
