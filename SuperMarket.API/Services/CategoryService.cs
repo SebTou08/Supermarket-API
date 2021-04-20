@@ -19,14 +19,17 @@ namespace SuperMarket.API.Services
             _unitOfWork = unitOfWork;
         }
 
-        public Task<IEnumerable<Category>> ListAsync()
+        public async Task<IEnumerable<Category>> ListAsync()
         {
-            throw new System.NotImplementedException();
+            return await _categoryRepository.ListAsync();
         }
 
-        public Task<CategoryResponse> GetByIdASync(int id)
+        public async Task<CategoryResponse> GetByIdASync(int id)
         {
-            throw new System.NotImplementedException();
+            var existingCategory = await _categoryRepository.FindById(id);
+            if (existingCategory == null)
+                return new CategoryResponse("Category not found");
+            return new CategoryResponse(existingCategory);
         }
 
         public async Task<CategoryResponse> SaveAsync(Category category)
@@ -43,14 +46,40 @@ namespace SuperMarket.API.Services
             }
         }
 
-        public Task<CategoryResponse> UpdateAsync(int id, Category category)
+        public async Task<CategoryResponse> UpdateAsync(int id, Category category)
         {
-            throw new System.NotImplementedException();
+            var existingCategory = await _categoryRepository.FindById(id);
+            if (existingCategory == null)
+                return new CategoryResponse("Category not found");
+            existingCategory.Name = category.Name;
+            try
+            {
+                _categoryRepository.Update(existingCategory);
+                await _unitOfWork.CompleteAsync();
+                return new CategoryResponse(existingCategory);
+            }
+            catch (Exception e)
+            {
+                return new CategoryResponse($"An error ocurred while finding the category {e.Message}");
+            }
         }
 
-        public Task<CategoryResponse> DeleteAsync(int id)
+        public async Task<CategoryResponse> DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var existingCategory = await _categoryRepository.FindById(id);
+            if (existingCategory == null)
+                return new CategoryResponse("Category not found");
+            
+            try
+            {
+                _categoryRepository.Remove(existingCategory);
+                await _unitOfWork.CompleteAsync();
+                return new CategoryResponse(existingCategory);
+            }
+            catch (Exception e)
+            {
+                return new CategoryResponse($"An error ocurred while finding the category {e.Message}");
+            }
         }
     }
 }

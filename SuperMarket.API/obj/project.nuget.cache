@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dl46V0Sr2c/bl/gK5VktQFDCppTUOt9gybpcY7060bFofRIu4i+iPQwtfvpsNXCJF4vEmwSqsJg3JOlVjtTyow==",
+  "dgSpecHash": "Nb93AYfQEZkWX8+YOtAidS/Xk9ownyveAiA2NTr0/hkgj/QvRHoaz2X0g9xL9sMeLRaLBwgQAeVhHOh+E3lhZA==",
   "success": true,
   "projectFilePath": "U:\\2021-01\\Aplicaciones Web\\SupermarketAPI\\SuperMarket.API\\SuperMarket.API\\SuperMarket.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sebas\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0-preview.3.21201.2\\microsoft.entityframeworkcore.6.0.0-preview.3.21201.2.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0-preview.3.21201.2\\microsoft.entityframeworkcore.abstractions.6.0.0-preview.3.21201.2.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.0-preview.3.21201.2\\microsoft.entityframeworkcore.analyzers.6.0.0-preview.3.21201.2.nupkg.sha512",
@@ -31,6 +34,7 @@
     "C:\\Users\\sebas\\.nuget\\packages\\system.collections.immutable\\6.0.0-preview.3.21201.4\\system.collections.immutable.6.0.0-preview.3.21201.4.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\system.componentmodel.annotations\\6.0.0-preview.3.21201.4\\system.componentmodel.annotations.6.0.0-preview.3.21201.4.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0-preview.3.21201.4\\system.diagnostics.diagnosticsource.6.0.0-preview.3.21201.4.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0-preview.3.21201.4\\system.runtime.compilerservices.unsafe.6.0.0-preview.3.21201.4.nupkg.sha512"
   ],
   "logs": []
