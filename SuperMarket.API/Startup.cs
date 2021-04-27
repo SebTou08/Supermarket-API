@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SuperMarket.API.Domain.Persistence.Contexts;
+using SuperMarket.API.Domain.Persistence.Repositories;
+using SuperMarket.API.Persistence.Repositories;
 
 namespace SuperMarket.API
 {
@@ -34,6 +36,10 @@ namespace SuperMarket.API
             {
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ITagRepository, TagRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddAutoMapper(typeof(Startup));
             //
             services.AddSwaggerGen(c =>
             {
