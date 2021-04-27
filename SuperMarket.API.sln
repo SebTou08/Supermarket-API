@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMarket.API", "SuperMarket.API\SuperMarket.API.csproj", "{BB688420-E41B-450A-930E-A394F52F85E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermarket.API.Test", "Supermarket.API.Test\Supermarket.API.Test.csproj", "{46FE5041-D322-4A7A-A432-68012E622A0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BB688420-E41B-450A-930E-A394F52F85E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB688420-E41B-450A-930E-A394F52F85E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB688420-E41B-450A-930E-A394F52F85E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46FE5041-D322-4A7A-A432-68012E622A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46FE5041-D322-4A7A-A432-68012E622A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46FE5041-D322-4A7A-A432-68012E622A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46FE5041-D322-4A7A-A432-68012E622A0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

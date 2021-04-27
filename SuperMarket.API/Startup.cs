@@ -9,12 +9,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SuperMarket.API.Domain.Persistence.Contexts;
 using SuperMarket.API.Domain.Persistence.Repositories;
+using SuperMarket.API.Domain.Services;
 using SuperMarket.API.Persistence.Repositories;
+using SuperMarket.API.Services;
 
 namespace SuperMarket.API
 {
@@ -31,19 +34,41 @@ namespace SuperMarket.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //!Contect configuration
+            //!dbContect configuration
+            //TODO: do this on your proyect
+            
+
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
             });
+            // ! Dependency Injection Configuration 
+            
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ITagRepository, TagRepository>();
+            services.AddScoped<IProductTagRepository, ProductTagRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ITagService, TagService>();
+            services.AddScoped<IProductTagServices, ProductTagService>();
+            
+            //!Endpoint case conventions Configurations
+
+            //los endpoints deben estar totalmente en minuscula. 
+            services.AddRouting(options => options.LowercaseUrls = true);
+            
+            //! Automapper initialization 
+            
             services.AddAutoMapper(typeof(Startup));
-            //
+            
+            //! FINISHED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "SuperMarket.API", Version = "v1"});
+                c.EnableAnnotations();
             });
         }
 

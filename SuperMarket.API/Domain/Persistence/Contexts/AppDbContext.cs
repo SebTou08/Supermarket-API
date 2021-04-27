@@ -40,10 +40,10 @@ namespace SuperMarket.API.Domain.Persistence.Contexts
             
             
             //Initial Data 
-            builder.Entity<Category>().HasData(
+           /* builder.Entity<Category>().HasData(
                 new Category {Id=100, Name = "Fruits and Vegetables"},
                 new Category {Id = 101, Name = "Dairy"}
-            );
+            );*/
             
             //Product Entity
             builder.Entity<Product>().ToTable("Products");
@@ -57,7 +57,7 @@ namespace SuperMarket.API.Domain.Persistence.Contexts
             
             
             // Initial Data
-            builder.Entity<Product>().HasData
+          /*  builder.Entity<Product>().HasData
             (
                 new Product
                 {
@@ -69,7 +69,7 @@ namespace SuperMarket.API.Domain.Persistence.Contexts
                     Id = 100, Name = "Milk", QuantityInPackage = 2, UnitOfMeasurement = EUnitOfMeasurement.Liter,
                     CategoryId = 101
                 }
-            );
+            );*/
      
 // T A G   E N T I T Y             
             //Tags Entity

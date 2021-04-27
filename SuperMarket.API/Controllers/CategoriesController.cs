@@ -6,6 +6,7 @@ using SuperMarket.API.Domain.Services;
 using SuperMarket.API.Resources;
 using AutoMapper;
 using SuperMarket.API.Extensions;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace SuperMarket.API.Controllers
 {
@@ -23,6 +24,12 @@ namespace SuperMarket.API.Controllers
             _mapper = mapper;
         }
 
+        [SwaggerOperation(
+            Summary = "List all categories",
+            Description = "List of categories",
+            OperationId = "ListAllCategories"
+            )]
+        [SwaggerResponse(200, "List of categories", typeof(IEnumerable<CategoryResource>))]
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<CategoryResource>),200)]
         public async Task<IEnumerable<CategoryResource>> GetAllAsync()
