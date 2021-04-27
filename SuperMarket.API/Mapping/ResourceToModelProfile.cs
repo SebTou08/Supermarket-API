@@ -7,6 +7,8 @@ namespace SuperMarket.API.Mapping
     {
         public ResourceToModelProfile()
         {
+            CreateMap<SaveCategoryResource, Category>();
+            CreateMap<SaveTagResource, Tag>();
         }
     }
 }
